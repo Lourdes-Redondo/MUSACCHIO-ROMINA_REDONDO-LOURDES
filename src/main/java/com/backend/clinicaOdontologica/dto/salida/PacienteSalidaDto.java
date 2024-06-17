@@ -1,7 +1,5 @@
 package com.backend.clinicaOdontologica.dto.salida;
 
-import com.backend.clinicaOdontologica.entity.Domicilio;
-
 import java.time.LocalDate;
 
 public class PacienteSalidaDto {
@@ -11,18 +9,18 @@ public class PacienteSalidaDto {
     private String apellido;
     private int dni;
     private LocalDate fechaIngreso;
-    private DomicilioSalidaDto domicilio;
+    private DomicilioSalidaDto domicilioSalidaDto;
 
     public PacienteSalidaDto() {
     }
 
-    public PacienteSalidaDto(Long id, String nombre, String apellido, int dni, LocalDate fechaIngreso, DomicilioSalidaDto domicilio) {
+    public PacienteSalidaDto(Long id, String nombre, String apellido, int dni, LocalDate fechaIngreso, DomicilioSalidaDto domicilioSalidaDto) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
         this.fechaIngreso = fechaIngreso;
-        this.domicilio = domicilio;
+        this.domicilioSalidaDto = domicilioSalidaDto;
     }
 
     public Long getId() {
@@ -65,11 +63,11 @@ public class PacienteSalidaDto {
         this.fechaIngreso = fechaIngreso;
     }
 
-    public DomicilioSalidaDto getDomicilio() {
-        return domicilio;
+    public DomicilioSalidaDto getDomicilioSalidaDto() {
+        return domicilioSalidaDto;
     }
 
-    public void setDomicilio(DomicilioSalidaDto domicilio) {
-        this.domicilio = domicilio;
+    public void setDomicilioSalidaDto(DomicilioSalidaDto domicilio) {
+        this.domicilioSalidaDto = domicilio;
     }
 }

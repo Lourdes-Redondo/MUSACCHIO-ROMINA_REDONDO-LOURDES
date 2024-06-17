@@ -1,15 +1,25 @@
 package com.backend.clinicaOdontologica.entity;
 
+import javax.persistence.Entity;
 import java.time.LocalDate;
+import javax.persistence.*;
 
+@Entity
+@Table(name = "PACIENTES")
 public class Paciente {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(length =  50)
     private String nombre;
+    @Column(length =  50)
     private String apellido;
+    @Column(length =  50)
     private int dni;
     private LocalDate fechaIngreso;
-
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "domicilio_id")
     private Domicilio domicilio;
 
     public Paciente() {

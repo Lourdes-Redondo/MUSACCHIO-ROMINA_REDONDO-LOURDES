@@ -1,8 +1,5 @@
 package com.backend.clinicaOdontologica.dto.entrada;
 
-import com.backend.clinicaOdontologica.entity.Odontologo;
-import com.backend.clinicaOdontologica.entity.Paciente;
-
 import javax.validation.Valid;
 import javax.validation.constraints.FutureOrPresent;
 import java.time.LocalDateTime;
@@ -12,7 +9,7 @@ public class TurnoEntradaDto {
     @Valid
     private PacienteEntradaDto pacienteEntradaDto;
     @Valid
-    private OdontologoEntradaDto odontologo;
+    private OdontologoEntradaDto odontologoEntradaDto;
     @FutureOrPresent(message = "La fecha del turno no puede ser anterior a la fecha de Hoy")
     private LocalDateTime fechaYHora;
 
@@ -21,7 +18,7 @@ public class TurnoEntradaDto {
 
     public TurnoEntradaDto(PacienteEntradaDto pacienteEntradaDto, OdontologoEntradaDto odontologo, LocalDateTime fechaYHora) {
         this.pacienteEntradaDto = pacienteEntradaDto;
-        this.odontologo = odontologo;
+        this.odontologoEntradaDto = odontologo;
         this.fechaYHora = fechaYHora;
     }
 
@@ -33,12 +30,12 @@ public class TurnoEntradaDto {
         this.pacienteEntradaDto = pacienteEntradaDto;
     }
 
-    public @Valid OdontologoEntradaDto getOdontologo() {
-        return odontologo;
+    public @Valid OdontologoEntradaDto getOdontologoEntradaDto() {
+        return odontologoEntradaDto;
     }
 
     public void setOdontologo(@Valid OdontologoEntradaDto odontologo) {
-        this.odontologo = odontologo;
+        this.odontologoEntradaDto = odontologo;
     }
 
     public @FutureOrPresent(message = "La fecha del turno no puede ser anterior a la fecha de Hoy") LocalDateTime getFechaYHora() {

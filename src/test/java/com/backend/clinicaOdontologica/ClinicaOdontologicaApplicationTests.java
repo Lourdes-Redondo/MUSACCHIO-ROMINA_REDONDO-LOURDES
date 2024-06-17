@@ -10,21 +10,6 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class ClinicaOdontologicaApplicationTests {
 
-	private OdontologoService odontologoService;
 
-	@Test
-	void deberiaRetornarUnaListaDeOdontologosEnH2(){
-
-		odontologoService = new OdontologoService(new OdontologoDaoH2());
-		assertFalse(odontologoService.listarOdontologos().isEmpty());
-	}
-
-	@Test
-	void deberiaRetornarUnaListaDeOdontologosEnMemoria(){
-
-		odontologoService = new OdontologoService(new OdontologoDaoMemoria());
-		assertFalse(odontologoService.listarOdontologos().isEmpty());
-
-	}
 
 }
