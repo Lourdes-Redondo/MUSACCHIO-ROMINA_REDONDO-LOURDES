@@ -38,11 +38,11 @@ public class TurnoService implements ITurnoService {
         Turno turno = modelMapper.map(turnoEntradaDto, Turno.class);
         LOGGER.info("Turno Entidad:" + turno);
         if(turno.getOdontologo() == null){
-            new BadRequestException("No hay registro del odontologo"); //como saco el id que vino en el turno entrada dto
+            new BadRequestException("No hay registro del odontologo");
         } else if (turno.getPaciente() == null) {
-            new BadRequestException("No hay registro del paciente"); //como saco el id que vino en el turno entrada dto
+            new BadRequestException("No hay registro del paciente");
         }
-        //Revisar para que se necesita el servicio aca
+
         TurnoSalidaDto turnoSalidaDto = modelMapper.map(turnoRepository.save(turno), TurnoSalidaDto.class);
         LOGGER.info("TurnoSalidaDto: " + turnoSalidaDto);
 
@@ -109,7 +109,7 @@ public class TurnoService implements ITurnoService {
 
         } else {
             LOGGER.error("No fue posible actualizar el turno porque no se encuentra en nuestra base de datos con ese id");
-            //lanzar excepcion
+
         }
 
         return turnoSalidaDto;
