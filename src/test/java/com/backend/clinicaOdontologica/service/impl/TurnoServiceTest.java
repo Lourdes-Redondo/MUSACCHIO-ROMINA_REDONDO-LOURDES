@@ -16,6 +16,7 @@ import org.springframework.test.context.TestPropertySource;
 import java.time.LocalDateTime;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -37,6 +38,23 @@ public class TurnoServiceTest {
         //assert
         assertNotNull(turnoSalidaDto);
         assertNotNull(turnoSalidaDto.getId());
+
+    }
+
+    @Test
+    @Order(2)
+    void deberiaBorrarUnTurno(){
+
+        assertDoesNotThrow(() -> turnoService.eliminarTurno(1L));
+
+    }
+
+    @Test
+    @Order(3)
+    void deberiaDevolverUnaListaVacia(){
+
+        List<TurnoSalidaDto> listaDeTurnos = turnoService.listarTurnos();
+        assertTrue(listaDeTurnos.isEmpty());
 
     }
 
