@@ -68,6 +68,16 @@ public class Turno {
 
     @Override
     public String toString() {
+        if(this.paciente == null && this.odontologo == null){
+            return "Este turno no tiene paciente ni odontologo para la fecha de: " + this.fechaYHora;
+        }
+        else if(this.paciente == null){
+            return "Este turno no tiene paciente, odontologo"+this.getOdontologo().getNombre() +"  para la fecha de: " + this.fechaYHora;
+        }
+        else if (this.odontologo ==null){
+            return "Este turno no tiene odontologo, paciente"+this.getPaciente().getNombre() +"  para la fecha de: " + this.fechaYHora;
+        }
+
         return "Turno para el paciente: " + this.paciente.getNombre() + " " + this.paciente.getApellido() + ", con el Odontologo: " + this.odontologo.getNombre() + " " + this.odontologo.getApellido() + " para la fecha de: " + this.fechaYHora;
     }
 
