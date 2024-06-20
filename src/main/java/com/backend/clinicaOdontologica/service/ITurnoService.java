@@ -1,5 +1,4 @@
 package com.backend.clinicaOdontologica.service;
-import com.backend.clinicaOdontologica.dto.entrada.PacienteEntradaDto;
 import com.backend.clinicaOdontologica.dto.entrada.TurnoEntradaDto;
 import com.backend.clinicaOdontologica.dto.salida.TurnoSalidaDto;
 import com.backend.clinicaOdontologica.exceptions.BadRequestException;

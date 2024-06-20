@@ -14,7 +14,6 @@ import java.sql.*;
 
 public class OdontologoDaoH2 implements IDao<Odontologo> {
 
-    //private final Logger LOGGER = Logger.getLogger(OdontologoDaoH2.class);
 
     private static final Logger LOGGER = LoggerFactory.getLogger(OdontologoDaoMemoria.class);
 

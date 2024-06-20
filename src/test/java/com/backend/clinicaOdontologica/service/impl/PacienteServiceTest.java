@@ -22,13 +22,6 @@ public class PacienteServiceTest {
     @Autowired
     private PacienteService pacienteService;
 
-
-   // @BeforeAll
-    //void cargarLaBaseDeTest(){
-        //aca se podrian cargar entities de ejemplo para el test, se podria usar un before each
-    //}
-
-
     @Test
     @Order(1)
     void deberiaRegistrarseUnPacienteDeNombreJuanYRetornarSuId(){
@@ -37,7 +30,6 @@ public class PacienteServiceTest {
 
         PacienteSalidaDto pacienteSalidaDto = pacienteService.registrarPaciente(pacienteEntradaDto);
 
-        //assert
         assertNotNull(pacienteSalidaDto);
         assertNotNull(pacienteSalidaDto.getId());
         assertEquals("Juan",pacienteSalidaDto.getNombre());

@@ -2,7 +2,6 @@ package com.backend.clinicaOdontologica.service.impl;
 
 import com.backend.clinicaOdontologica.dto.entrada.PacienteEntradaDto;
 import com.backend.clinicaOdontologica.dto.entrada.TurnoEntradaDto;
-import com.backend.clinicaOdontologica.dto.salida.PacienteSalidaDto;
 import com.backend.clinicaOdontologica.dto.salida.TurnoSalidaDto;
 import com.backend.clinicaOdontologica.entity.Paciente;
 import com.backend.clinicaOdontologica.entity.Turno;
@@ -20,14 +19,14 @@ import java.util.List;
 @Service
 public class TurnoService implements ITurnoService {
 
-    //private IDao<Turno> turnoIDao;
+
     private TurnoRepository turnoRepository;
     private final ModelMapper modelMapper;
     private Logger LOGGER = LoggerFactory.getLogger(OdontologoService.class);;
 
 
     public TurnoService(TurnoRepository turnoRepository, ModelMapper modelMapper) {
-        //this.turnoIDao = turnoIDao;
+
         this.turnoRepository = turnoRepository;
         this.modelMapper = modelMapper;
         configureMapping();

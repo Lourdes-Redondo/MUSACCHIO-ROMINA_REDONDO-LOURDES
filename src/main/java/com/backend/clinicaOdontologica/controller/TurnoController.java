@@ -24,13 +24,13 @@ public class TurnoController {
         this.turnoService = turnoService;
     }
 
-    //POST
+
     @PostMapping("/registrar")
     public ResponseEntity<TurnoSalidaDto> registrarTurno(@RequestBody @Valid TurnoEntradaDto turnoEntradaDto) throws BadRequestException {
         return new ResponseEntity<>(turnoService.registrarTurno(turnoEntradaDto), HttpStatus.CREATED);
     }
 
-    //GET
+
     @GetMapping("/listar")
     public ResponseEntity<List<TurnoSalidaDto>> listarTurnos(){
         return new ResponseEntity<>(turnoService.listarTurnos(), HttpStatus.OK);
@@ -41,13 +41,13 @@ public class TurnoController {
         return new ResponseEntity<>(turnoService.buscarTurnoPorId(id), HttpStatus.OK);
     }
 
-    //PUT
+
     @PutMapping("/actualizar/{id}")
     public ResponseEntity<TurnoSalidaDto> actualizarTurno(@RequestBody @Valid TurnoEntradaDto turnoEntradaDto, @PathVariable Long id){
         return new ResponseEntity<>(turnoService.actualizarTurno(turnoEntradaDto, id), HttpStatus.OK);
     }
 
-    //DELETE
+
     @DeleteMapping("/eliminar")
     public ResponseEntity<?> eliminarTurno(@RequestParam Long id) throws ResourceNotFoundException {
         turnoService.eliminarTurno(id);
