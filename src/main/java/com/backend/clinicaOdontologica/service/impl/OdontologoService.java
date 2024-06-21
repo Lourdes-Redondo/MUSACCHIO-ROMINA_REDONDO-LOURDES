@@ -17,12 +17,10 @@ import java.util.List;
 @Service
 public class OdontologoService implements IOdontologoService {
 
-    //private IDao<Odontologo> odontologoIDao;
+
     private final ModelMapper modelMapper;
     private Logger LOGGER = LoggerFactory.getLogger(OdontologoService.class);;
     private OdontologoRepository odontologoRepository;
-
-
 
     public OdontologoService(OdontologoRepository odontologoRepository, ModelMapper modelMapper) {
 
